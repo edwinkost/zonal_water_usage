@@ -246,15 +246,15 @@ if __name__ == "__main__":
         fulldate = '%4i-%02i-%02i'  %(int(iYear), int(12), int(31))
         print fulldate
 
-        # netcdf input file name:
-        inputFile = inputFiles[var]
-        if var != "area_equipped_with_irrigation":
-            inputFile = inputFile + "_" + fulldate + "_" + fulldate + ".nc"
-        print inputFile
-            
         # reading pcraster files:
         for var in inputFiles.keys():        
             
+            # netcdf input file name:
+            inputFile = inputFiles[var]
+            if var != "area_equipped_with_irrigation":
+                inputFile = inputFile + "_" + fulldate + "_" + fulldate + ".nc"
+            print inputFile
+
             if var != "area_equipped_with_irrigation":
                 output[var]['pcr_value'] = vos.netcdf2PCRobjClone(ncFile = inputFile,\
                                                                   varName = "Automatic",\
