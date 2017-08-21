@@ -3,15 +3,15 @@ require(ggplot2)
 require(foreign)
 
 # output folder
-output_folder = "/scratch-shared/edwin/country_water_use_for_WRI_correct/table_summary/"
+output_folder = "/scratch-shared/edwinhs/country_water_use_for_pcrglobwb2.0_paper/table_summary/"
 dir.create(output_folder)
 
 # table folder
-table_folder  = "/scratch-shared/edwin/country_water_use_for_WRI_correct/table/"
+table_folder  = "/scratch-shared/edwinhs/country_water_use_for_pcrglobwb2.0_paper/table/"
 
 # years used
-starting_year = 1960 
-year_used = seq(starting_year, 2010, 1)
+starting_year = 1958 
+year_used = seq(starting_year, 2015, 1)
 
 # get the variable names
 first_year_table = read.table(paste(table_folder, "/summary_", as.character(starting_year), "-12-31.txt", sep = ""), header = T)
