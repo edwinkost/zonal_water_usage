@@ -247,7 +247,7 @@ if __name__ == "__main__":
         print fulldate
 
         # netcdf input file name:
-        if inputFile = inputFiles[var]
+        inputFile = inputFiles[var]
         if var != "area_equipped_with_irrigation":
             inputFile = inputFile + "_" + fulldate + "_" + fulldate + ".nc"
         print inputFile
@@ -256,7 +256,7 @@ if __name__ == "__main__":
         for var in inputFiles.keys():        
             
             if var != "area_equipped_with_irrigation":
-                output[var]['pcr_value'] = vos.netcdf2PCRobjClone(ncFile = inputFiles[var],\
+                output[var]['pcr_value'] = vos.netcdf2PCRobjClone(ncFile = inputFile,\
                                                                   varName = "Automatic",\
                                                                   dateInput = fulldate,
                                                                   useDoy = None,
@@ -264,7 +264,7 @@ if __name__ == "__main__":
                                                                   LatitudeLongitude = True,
                                                                   specificFillValue = None)
             else:
-                output[var]['pcr_value'] = vos.netcdf2PCRobjClone(ncFile = inputFiles[var],\
+                output[var]['pcr_value'] = vos.netcdf2PCRobjClone(ncFile = inputFile,\
                                                                   varName = "Automatic",\
                                                                   dateInput = fulldate,
                                                                   useDoy = "yearly",
