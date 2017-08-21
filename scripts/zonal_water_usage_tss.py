@@ -252,22 +252,13 @@ if __name__ == "__main__":
                 inputFile = inputFile + "_" + fulldate + "_to_" + fulldate + ".nc"
             print inputFile
 
-            if var != "area_equipped_with_irrigation":
-                output[var]['pcr_value'] = vos.netcdf2PCRobjClone(ncFile = inputFile,\
-                                                                  varName = "Automatic",\
-                                                                  dateInput = fulldate,
-                                                                  useDoy = None,
-                                                                  cloneMapFileName  = cloneMapFileName,
-                                                                  LatitudeLongitude = True,
-                                                                  specificFillValue = None)
-            else:
-                output[var]['pcr_value'] = vos.netcdf2PCRobjClone(ncFile = inputFile,\
-                                                                  varName = "Automatic",\
-                                                                  dateInput = fulldate,
-                                                                  useDoy = "yearly",
-                                                                  cloneMapFileName  = cloneMapFileName,
-                                                                  LatitudeLongitude = True,
-                                                                  specificFillValue = None)
+            output[var]['pcr_value'] = vos.netcdf2PCRobjClone(ncFile = inputFile,\
+                                                              varName = "Automatic",\
+                                                              dateInput = fulldate,
+                                                              useDoy = None,
+                                                              cloneMapFileName  = cloneMapFileName,
+                                                              LatitudeLongitude = True,
+                                                              specificFillValue = None)
 
         # calculating irrigation water consumption
         output['irrigation_water_consumption']['pcr_value'] = output['evaporation_from_irrigation']['pcr_value'] * \
@@ -275,9 +266,8 @@ if __name__ == "__main__":
                                                                                 output['irrigation_water_withdrawal']['pcr_value'] +\
                                                                                 output['precipitation_at_irrigation']['pcr_value'])
         
-        # convert some values from m to volume
-        if var != "area_equipped_with_irrigation":
-            output[var]['pcr_value'] = output[var]['pcr_value'] * cellArea
+        # convert values from m to volume
+        output[var]['pcr_value'] = output[var]['pcr_value'] * cellArea
 
         # upscaling to the class (country) units and writing to netcdf files and a table
         for var in output.keys():
@@ -288,10 +278,7 @@ if __name__ == "__main__":
             pcrValue = pcr.cover(output[var]['pcr_value'], 0.0)
             
             # upscaling to the class (country) units and converting the units to km3/year
-            if var != "area_equipped_with_irrigation":
-                pcrValue = pcr.areatotal(pcrValue, uniqueIDs) / (1000. * 1000. * 1000.)
-            else:
-                pcrValue = pcr.areatotal(pcrValue, uniqueIDs)
+            pcrValue = pcr.areatotal(pcrValue, uniqueIDs) / (1000. * 1000. * 1000.)
             
             # write values to a netcdf file
             ncFileName = output[var]['file_name']
@@ -311,8 +298,7 @@ if __name__ == "__main__":
         txt_file = open(table_directory + "/" + "summary_" + fulldate + ".txt", "w")
         for var in output.keys():
             header += " " + str(var)
-            if var == "area_equipped_with_irrigation": header += "_ha"
-            if var != "area_equipped_with_irrigation": header += "_km3"
+            header += "_km3"
             cmd    += " " + str(tmp_directory) + "/" + str(var) + ".tmp"
         cmd += " " + str(tmp_directory) + "/" + "summary_" + fulldate + ".txt.tmp"
         print cmd
