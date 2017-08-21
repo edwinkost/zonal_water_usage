@@ -128,7 +128,7 @@ if __name__ == "__main__":
     pcr.setclone(landmask05minFile)
     
     # output directory
-    outputDirectory = "/scratch-shared/edwinhs/country_water_use_for/"
+    outputDirectory = "/scratch-shared/edwinhs/country_water_use_for_pcrglobwb2.0_paper/"
 
     # start year and end year
     staYear = 1958
@@ -142,7 +142,7 @@ if __name__ == "__main__":
     inputFiles["industry_water_withdrawal"    ]    = inputDirectory + "/" + "industryWaterWithdrawal_annuaTot_output"
     inputFiles["livestock_water_withdrawal"   ]    = inputDirectory + "/" + "livestockWaterWithdrawal_annuaTot_output"
     inputFiles["total_evaporation"            ]    = inputDirectory + "/" + "totalEvaporation_annuaTot_output"
-    inputFiles["total_groundwater_abstraction"]    = inputDirectory + "/" + "totalGroundwaterAbstraction_annuaTot_output"
+    inputFiles["total_groundwater_abstraction"]    = inputDirectory + "/" + "totalGroundwaterAbstraction_annuaTot_output_1958-12-31_to_2015-12-31.nc"
     inputFiles["total_groundwater_recharge"   ]    = inputDirectory + "/" + "gwRecharge_annuaTot_output"
     inputFiles["total_runoff"                 ]    = inputDirectory + "/" + "totalRunoff_annuaTot_output"
     # - unit of the following is m.year and flux values given are over the entire cell area (not only irrigated areas)
@@ -253,6 +253,8 @@ if __name__ == "__main__":
             inputFile = inputFiles[var]
             if var != "area_equipped_with_irrigation":
                 inputFile = inputFile + "_" + fulldate + "_to_" + fulldate + ".nc"
+            if var == "total_groundwater_abstraction":
+                inputFile = inputFiles[var]
             print inputFile
 
             if var != "area_equipped_with_irrigation":
