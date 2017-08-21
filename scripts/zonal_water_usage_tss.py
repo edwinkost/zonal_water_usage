@@ -266,9 +266,6 @@ if __name__ == "__main__":
                                                                                 output['irrigation_water_withdrawal']['pcr_value'] +\
                                                                                 output['precipitation_at_irrigation']['pcr_value'])
         
-        # convert values from m to volume
-        output[var]['pcr_value'] = output[var]['pcr_value'] * cellArea
-
         # upscaling to the class (country) units and writing to netcdf files and a table
         for var in output.keys():
             
@@ -277,6 +274,9 @@ if __name__ == "__main__":
             # covering the map with zero
             pcrValue = pcr.cover(output[var]['pcr_value'], 0.0)
             
+            # convert values from m to m3
+            output[var]['pcr_value'] = output[var]['pcr_value'] * cellArea
+
             # upscaling to the class (country) units and converting the units to km3/year
             pcrValue = pcr.areatotal(pcrValue, uniqueIDs) / (1000. * 1000. * 1000.)
             
