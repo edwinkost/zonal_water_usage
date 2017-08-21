@@ -151,9 +151,7 @@ if __name__ == "__main__":
     inputFiles["precipitation_at_irrigation"  ]    = inputDirectory + "/" + "precipitation_at_irrigation_annuaTot_output"
 
     # some extra input files:
-    # - area equipped with irrigation 
-    inputFiles['area_equipped_with_irrigation'] = "/projects/0/dfguu/data/hydroworld/PCRGLOBWB20/input5min/landSurface/waterDemand/irrigated_areas/irrigationArea05ArcMin.nc"
-    # TODO: add info about return flow fraction for domestic, industry and livestock 
+    # TOFO: add info about area equipped with irrigation 
 
     # output that will be calculated 
     output = {}
@@ -164,7 +162,6 @@ if __name__ == "__main__":
         output[var]['file_name'] = outputDirectory + "/" + str(var) + "_annual_country.nc"
         output[var]['unit']      = "km3.year-1"
         output[var]['pcr_value'] = None
-        if var == 'area_equipped_with_irrigation': output[var]['unit'] = "ha"
         
     # making output and temporary directories
     if os.path.exists(outputDirectory):
@@ -251,10 +248,8 @@ if __name__ == "__main__":
             
             # netcdf input file name:
             inputFile = inputFiles[var]
-            if var != "area_equipped_with_irrigation":
+            if var!= "total_groundwater_abstraction":
                 inputFile = inputFile + "_" + fulldate + "_to_" + fulldate + ".nc"
-            if var == "total_groundwater_abstraction":
-                inputFile = inputFiles[var]
             print inputFile
 
             if var != "area_equipped_with_irrigation":
