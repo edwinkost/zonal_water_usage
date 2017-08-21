@@ -252,7 +252,7 @@ if __name__ == "__main__":
             # netcdf input file name:
             inputFile = inputFiles[var]
             if var != "area_equipped_with_irrigation":
-                inputFile = inputFile + "_" + fulldate + "_" + fulldate + ".nc"
+                inputFile = inputFile + "_" + fulldate + "_to_" + fulldate + ".nc"
             print inputFile
 
             if var != "area_equipped_with_irrigation":
