@@ -72,38 +72,52 @@ lm_r_squared      = apply(y, 1, function(y) summary( lm(y~x) )$r.squared)
 lm_adj_r_squared  = apply(y, 1, function(y) summary( lm(y~x) )$r.squared)
 lm_slope[is.na(average)] = NA
 
+# calculate average and standard deviation values for certain periods
 
-# calculate some statistics values for the period 1981-1990
-# - starting and end columns
-sta_col = which(names(selected_table) == as.character(1981))
-end_col = which(names(selected_table) == as.character(1990))
-# - average and standard deviation values
-average_1981_to_1990 = apply(selected_table[,sta_col:end_col], 1, mean)
-std_dev_1981_to_1990 = apply(selected_table[,sta_col:end_col], 1, sd)
+periods_in_year = seq(1960, 2015, 5)
 
-# calculate some statistics values for the period 1991-2000
-# - starting and end columns
-sta_col = which(names(selected_table) == as.character(1991))
-end_col = which(names(selected_table) == as.character(2000))
-# - average and standard deviation values
-average_1991_to_2000 = apply(selected_table[,sta_col:end_col], 1, mean)
-std_dev_1991_to_2000 = apply(selected_table[,sta_col:end_col], 1, sd)
+for (i_period in 1:length(periods_in_year)){
 
-# calculate some statistics values for the period 2001-2010
+mid_year = periods_in_year[i_period]
+sta_year = mid_year - 2
+end_year = mid_year + 2
+
+# PCR-GLOBWB runs until 2015 only
+if (mid_year == 2015) {end_year = 2015}
+
+# calculate some statistics values for a certain period
 # - starting and end columns
-sta_col = which(names(selected_table) == as.character(2001))
-end_col = which(names(selected_table) == as.character(2010))
+sta_col = which(names(selected_table) == as.character(sta_year))
+end_col = which(names(selected_table) == as.character(end_year))
 # - average and standard deviation values
-average_2001_to_2010 = apply(selected_table[,sta_col:end_col], 1, mean)
-std_dev_2001_to_2010 = apply(selected_table[,sta_col:end_col], 1, sd)
+average_for_this_period = apply(selected_table[,sta_col:end_col], 1, mean)
+std_dev_for_this_period = apply(selected_table[,sta_col:end_col], 1, sd)
+
+# average and standard deviation values
+assign(paste("avg", as.character(sta_year), as.character(end_year), as.character(mid_year), sep = "_"), average_for_this_period)
+assign(paste("std", as.character(sta_year), as.character(end_year), as.character(mid_year), sep = "_"), std_dev_for_this_period)
+
+} # end for loop for i_year
 
 # merge the aforementioned variables to the final table
 final_table = cbind(selected_table, 
                     average, std_dev, cor_pearson, cor_spearman, cor_kendall, cor_pearson__p_value, cor_spearman_p_value, cor_kendall__p_value, 
-                    lm_slope, lm_r_squared, lm_adj_r_squared, 
-                    average_1981_to_1990, std_dev_1981_to_1990, 
-                    average_1991_to_2000, std_dev_1991_to_2000, 
-                    average_2001_to_2010, std_dev_2001_to_2010)
+                    lm_slope, lm_r_squared, lm_adj_r_squared,
+                    avg_1958_1962_1960, _1958_1962_1960,
+                    avg_1963_1967_1965, _1963_1967_1965,
+                    avg_1968_1972_1970, _1968_1972_1970,
+                    avg_1973_1977_1975, _1973_1977_1975,
+                    avg_1978_1982_1980, _1978_1982_1980,
+                    avg_1983_1987_1985, _1983_1987_1985,
+                    avg_1988_1992_1990, _1988_1992_1990,
+                    avg_1993_1997_1995, _1993_1997_1995,
+                    avg_1998_2002_2000, _1998_2002_2000,
+                    avg_2003_2007_2005, _2003_2007_2005,
+                    avg_2008_2012_1960, _2008_2012_1960,
+                    avg_2013_2015_2015, _2013_2015_2015
+                    )
+
+
 # sort table 
 final_table[order(as.numeric(as.character(final_table$FID))), ]
 
