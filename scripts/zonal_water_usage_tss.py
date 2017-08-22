@@ -137,21 +137,33 @@ if __name__ == "__main__":
     # input files
     inputDirectory  = "/scratch-shared/edwinhs/runs_2017_july_aug_finalizing_4LCs/05min_runs/05min_runs_4LCs_accutraveltime_cru-forcing_1958-2015/non-natural_starting_from_1958/global/netcdf/"
     inputFiles = {}
+    #
     # - unit of the following is m.year and flux values given are over the entire cell area
-    inputFiles["domestic_water_withdrawal"    ]    = inputDirectory + "/" + "domesticWaterWithdrawal_annuaTot_output"
-    inputFiles["industry_water_withdrawal"    ]    = inputDirectory + "/" + "industryWaterWithdrawal_annuaTot_output"
-    inputFiles["livestock_water_withdrawal"   ]    = inputDirectory + "/" + "livestockWaterWithdrawal_annuaTot_output"
-    inputFiles["total_evaporation"            ]    = inputDirectory + "/" + "totalEvaporation_annuaTot_output"
-    inputFiles["total_groundwater_abstraction"]    = inputDirectory + "/" + "totalGroundwaterAbstraction_annuaTot_output_1958-12-31_to_2015-12-31.nc"
-    inputFiles["total_groundwater_recharge"   ]    = inputDirectory + "/" + "gwRecharge_annuaTot_output"
-    inputFiles["total_runoff"                 ]    = inputDirectory + "/" + "totalRunoff_annuaTot_output"
+    #
+    inputFiles["domestic_water_withdrawal"     ]    = inputDirectory + "/" + "domesticWaterWithdrawal_annuaTot_output"
+    inputFiles["industry_water_withdrawal"     ]    = inputDirectory + "/" + "industryWaterWithdrawal_annuaTot_output"
+    inputFiles["livestock_water_withdrawal"    ]    = inputDirectory + "/" + "livestockWaterWithdrawal_annuaTot_output"
+    #
+    inputFiles["non_irrigation_consumption"    ]    = inputDirectory + "/" + "nonIrrWaterConsumption_annuaTot_output"
+    #
+    inputFiles["precipitation"                 ]    = inputDirectory + "/" + "precipitation_annuaTot_output"
+    inputFiles["total_runoff"                  ]    = inputDirectory + "/" + "totalRunoff_annuaTot_output"
+    inputFiles["total_evaporation"             ]    = inputDirectory + "/" + "totalEvaporation_annuaTot_output"
+    inputFiles["total_groundwater_recharge"    ]    = inputDirectory + "/" + "gwRecharge_annuaTot_output"
+    #
+    inputFiles["total_abstraction"             ]    = inputDirectory + "/" + "totalAbstraction_annuaTot_output"
+    inputFiles["desalination_abstraction"      ]    = inputDirectory + "/" + "desalinationAbstraction_annuaTot_output"
+    inputFiles["surface_water_abstraction"     ]    = inputDirectory + "/" + "surfaceWaterAbstraction_annuaTot_output"
+    inputFiles["total_groundwater_abstraction" ]    = inputDirectory + "/" + "totalGroundwaterAbstraction_annuaTot_output_1958-12-31_to_2015-12-31.nc"
+    inputFiles["fossil_groundwater_abstraction"]    = inputDirectory + "/" + "fossilGroundwaterAbstraction_annuaTot_output"
+    #
     # - unit of the following is m.year and flux values given are over the entire cell area (not only irrigated areas)
-    inputFiles["irrigation_water_withdrawal"  ]    = inputDirectory + "/" + "irrigationWaterWithdrawal_annuaTot_output"
-    inputFiles["evaporation_from_irrigation"  ]    = inputDirectory + "/" + "evaporation_from_irrigation_annuaTot_output"
-    inputFiles["precipitation_at_irrigation"  ]    = inputDirectory + "/" + "precipitation_at_irrigation_annuaTot_output"
+    inputFiles["irrigation_water_withdrawal"   ]    = inputDirectory + "/" + "irrigationWaterWithdrawal_annuaTot_output"
+    inputFiles["evaporation_from_irrigation"   ]    = inputDirectory + "/" + "evaporation_from_irrigation_annuaTot_output"
+    inputFiles["precipitation_at_irrigation"   ]    = inputDirectory + "/" + "precipitation_at_irrigation_annuaTot_output"
 
-    # some extra input files:
-    # TOFO: add info about area equipped with irrigation 
+    # TODO: add info about area equipped with irrigation 
+    # TODO: add info about return flow fraction for domestic, industry and livestock  
 
     # output that will be calculated 
     output = {}
@@ -210,11 +222,13 @@ if __name__ == "__main__":
     landmask = pcr.cover(landmask, pcr.defined(uniqueIDs))
     
     # extending class (country) ids
-    max_step = 5
+    max_step = 7
     for i in range(1, max_step+1, 1):
         cmd = "Extending class: step "+str(i)+" from " + str(max_step)
         print(cmd)
         uniqueIDs = pcr.cover(uniqueIDs, pcr.windowmajority(uniqueIDs, 0.5))
+    # - cover the rest with a new id
+    uniqueIDs = pcr.cover(uniqueIDs, pcr.nominal(pcr.mapmaximum(pcr.scalar(uniqueIDs)) + 1000))
     # - use only cells within the landmask
     uniqueIDs = pcr.ifthen(landmask, uniqueIDs)
     pcr.report(uniqueIDs, "class_ids.map")                                
