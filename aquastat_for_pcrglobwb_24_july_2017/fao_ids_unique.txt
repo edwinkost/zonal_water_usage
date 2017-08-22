@@ -1,0 +1,201 @@
+"fao_ids.Area";"fao_ids.Area.Id"
+"ARM|Armenia";1
+"AFG|Afghanistan";2
+"ALB|Albania";3
+"DZA|Algeria";4
+"AND|Andorra";6
+"AGO|Angola";7
+"ATG|Antigua and Barbuda";8
+"ARG|Argentina";9
+"AUS|Australia";10
+"AUT|Austria";11
+"BHS|Bahamas";12
+"BHR|Bahrain";13
+"BRB|Barbados";14
+"BGD|Bangladesh";16
+"BTN|Bhutan";18
+"BOL|Bolivia (Plurinational State of)";19
+"BWA|Botswana";20
+"BRA|Brazil";21
+"BLZ|Belize";23
+"SLB|Solomon Islands";25
+"BRN|Brunei Darussalam";26
+"BGR|Bulgaria";27
+"MMR|Myanmar";28
+"BDI|Burundi";29
+"CMR|Cameroon";32
+"CAN|Canada";33
+"CPV|Cabo Verde";35
+"CAF|Central African Republic";37
+"LKA|Sri Lanka";38
+"TCD|Chad";39
+"CHL|Chile";40
+"COL|Colombia";44
+"COM|Comoros";45
+"COG|Congo";46
+"COK|Cook Islands";47
+"CRI|Costa Rica";48
+"CUB|Cuba";49
+"CYP|Cyprus";50
+"AZE|Azerbaijan";52
+"BEN|Benin";53
+"DNK|Denmark";54
+"DMA|Dominica";55
+"DOM|Dominican Republic";56
+"BLR|Belarus";57
+"ECU|Ecuador";58
+"EGY|Egypt";59
+"SLV|El Salvador";60
+"GNQ|Equatorial Guinea";61
+"EST|Estonia";63
+"FRO|Faroe Islands";64
+"FJI|Fiji";66
+"FIN|Finland";67
+"FRA|France";68
+"DJI|Djibouti";72
+"GEO|Georgia";73
+"GAB|Gabon";74
+"GMB|Gambia";75
+"DEU|Germany";79
+"BIH|Bosnia and Herzegovina";80
+"GHA|Ghana";81
+"KIR|Kiribati";83
+"GRC|Greece";84
+"GRD|Grenada";86
+"GTM|Guatemala";89
+"GIN|Guinea";90
+"GUY|Guyana";91
+"HTI|Haiti";93
+"VAT|Holy See";94
+"HND|Honduras";95
+"HUN|Hungary";97
+"HRV|Croatia";98
+"ISL|Iceland";99
+"IND|India";100
+"IDN|Indonesia";101
+"IRN|Iran (Islamic Republic of)";102
+"IRQ|Iraq";103
+"IRL|Ireland";104
+"ISR|Israel";105
+"ITA|Italy";106
+"CIV|Côte d'Ivoire";107
+"KAZ|Kazakhstan";108
+"JAM|Jamaica";109
+"JPN|Japan";110
+"JOR|Jordan";112
+"KGZ|Kyrgyzstan";113
+"KEN|Kenya";114
+"KHM|Cambodia";115
+"PRK|Democratic People's Republic of Korea";116
+"KOR|Republic of Korea";117
+"KWT|Kuwait";118
+"LVA|Latvia";119
+"LAO|Lao People's Democratic Republic";120
+"LBN|Lebanon";121
+"LSO|Lesotho";122
+"LBR|Liberia";123
+"LBY|Libya";124
+"LIE|Liechtenstein";125
+"LTU|Lithuania";126
+"MHL|Marshall Islands";127
+"MDG|Madagascar";129
+"MWI|Malawi";130
+"MYS|Malaysia";131
+"MDV|Maldives";132
+"MLI|Mali";133
+"MLT|Malta";134
+"MRT|Mauritania";136
+"MUS|Mauritius";137
+"MEX|Mexico";138
+"MCO|Monaco";140
+"MNG|Mongolia";141
+"MAR|Morocco";143
+"MOZ|Mozambique";144
+"FSM|Micronesia (Federated States of)";145
+"MDA|Republic of Moldova";146
+"NAM|Namibia";147
+"NRU|Nauru";148
+"NPL|Nepal";149
+"NLD|Netherlands";150
+"MKD|The former Yugoslav Republic of Macedonia";154
+"VUT|Vanuatu";155
+"NZL|New Zealand";156
+"NIC|Nicaragua";157
+"NER|Niger";158
+"NGA|Nigeria";159
+"NIU|Niue";160
+"NOR|Norway";162
+"PAK|Pakistan";165
+"PAN|Panama";166
+"CZE|Czechia";167
+"PNG|Papua New Guinea";168
+"PRY|Paraguay";169
+"PER|Peru";170
+"PHL|Philippines";171
+"POL|Poland";173
+"PRT|Portugal";174
+"GNB|Guinea-Bissau";175
+"TLS|Timor-Leste";176
+"PRI|Puerto Rico";177
+"ERI|Eritrea";178
+"QAT|Qatar";179
+"PLW|Palau";180
+"ZWE|Zimbabwe";181
+"ROU|Romania";183
+"RWA|Rwanda";184
+"RUS|Russian Federation";185
+"KNA|Saint Kitts and Nevis";188
+"LCA|Saint Lucia";189
+"VCT|Saint Vincent and the Grenadines";191
+"SMR|San Marino";192
+"STP|Sao Tome and Principe";193
+"SAU|Saudi Arabia";194
+"SEN|Senegal";195
+"SYC|Seychelles";196
+"SLE|Sierra Leone";197
+"SVN|Slovenia";198
+"SVK|Slovakia";199
+"SGP|Singapore";200
+"SOM|Somalia";201
+"ZAF|South Africa";202
+"ESP|Spain";203
+"SUR|Suriname";207
+"TJK|Tajikistan";208
+"SWZ|Swaziland";209
+"SWE|Sweden";210
+"CHE|Switzerland";211
+"SYR|Syrian Arab Republic";212
+"TKM|Turkmenistan";213
+"TZA|United Republic of Tanzania";215
+"THA|Thailand";216
+"TGO|Togo";217
+"TKL|Tokelau";218
+"TON|Tonga";219
+"TTO|Trinidad and Tobago";220
+"OMN|Oman";221
+"TUN|Tunisia";222
+"TUR|Turkey";223
+"ARE|United Arab Emirates";225
+"UGA|Uganda";226
+"TUV|Tuvalu";227
+"GBR|United Kingdom";229
+"UKR|Ukraine";230
+"USA|United States of America";231
+"BFA|Burkina Faso";233
+"URY|Uruguay";234
+"UZB|Uzbekistan";235
+"VEN|Venezuela (Bolivarian Republic of)";236
+"VNM|Viet Nam";237
+"ETH|Ethiopia";238
+"WSM|Samoa";244
+"YEM|Yemen";249
+"COD|Democratic Republic of the Congo";250
+"ZMB|Zambia";251
+"BEL|Belgium";255
+"LUX|Luxembourg";256
+"SRB|Serbia";272
+"MNE|Montenegro";273
+"SDN|Sudan";276
+"SSD|South Sudan";277
+"PSE|Occupied Palestinian Territory";299
+"CHN|China";351
