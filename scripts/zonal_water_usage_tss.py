@@ -308,7 +308,7 @@ if __name__ == "__main__":
                        "livestockNettoDemand"]:
                 number_of_days_in_the_year = 365
                 if calendar.isleap(iYear): number_of_days_in_the_year = 366 
-                output[var]['pcr_value'] = output[var]['pcr_value']
+                output[var]['pcr_value'] = output[var]['pcr_value'] * number_of_days_in_the_year
                                                               
 
         #~ # calculating irrigation water consumption
