@@ -153,22 +153,22 @@ if __name__ == "__main__":
     inputFiles["industryNettoDemand"   ]      = waterDemandDirectory + "/" + "industryNettoDemand.nc"
     inputFiles["livestockNettoDemand"  ]      = waterDemandDirectory + "/" + "livestockNettoDemand.nc"
     #
-    inputFiles["domestic_water_withdrawal"     ]    = inputDirectory + "/" + "domesticWaterWithdrawal_annuaTot_output"
-    inputFiles["industry_water_withdrawal"     ]    = inputDirectory + "/" + "industryWaterWithdrawal_annuaTot_output"
-    inputFiles["livestock_water_withdrawal"    ]    = inputDirectory + "/" + "livestockWaterWithdrawal_annuaTot_output"
-    #
-    inputFiles["non_irrigation_consumption"    ]    = inputDirectory + "/" + "nonIrrWaterConsumption_annuaTot_output"
-    #
-    inputFiles["precipitation"                 ]    = inputDirectory + "/" + "precipitation_annuaTot_output"
-    inputFiles["total_runoff"                  ]    = inputDirectory + "/" + "totalRunoff_annuaTot_output"
-    inputFiles["total_evaporation"             ]    = inputDirectory + "/" + "totalEvaporation_annuaTot_output"
-    inputFiles["total_groundwater_recharge"    ]    = inputDirectory + "/" + "gwRecharge_annuaTot_output"
-    #
-    inputFiles["total_abstraction"             ]    = inputDirectory + "/" + "totalAbstraction_annuaTot_output"
-    inputFiles["desalination_abstraction"      ]    = inputDirectory + "/" + "desalinationAbstraction_annuaTot_output"
-    inputFiles["surface_water_abstraction"     ]    = inputDirectory + "/" + "surfaceWaterAbstraction_annuaTot_output"
-    inputFiles["total_groundwater_abstraction" ]    = inputDirectory + "/" + "totalGroundwaterAbstraction_annuaTot_output_1958-12-31_to_2015-12-31.nc"
-    inputFiles["fossil_groundwater_abstraction"]    = inputDirectory + "/" + "fossilGroundwaterAbstraction_annuaTot_output"
+    #~ inputFiles["domestic_water_withdrawal"     ]    = inputDirectory + "/" + "domesticWaterWithdrawal_annuaTot_output"
+    #~ inputFiles["industry_water_withdrawal"     ]    = inputDirectory + "/" + "industryWaterWithdrawal_annuaTot_output"
+    #~ inputFiles["livestock_water_withdrawal"    ]    = inputDirectory + "/" + "livestockWaterWithdrawal_annuaTot_output"
+    #~ #
+    #~ inputFiles["non_irrigation_consumption"    ]    = inputDirectory + "/" + "nonIrrWaterConsumption_annuaTot_output"
+    #~ #
+    #~ inputFiles["precipitation"                 ]    = inputDirectory + "/" + "precipitation_annuaTot_output"
+    #~ inputFiles["total_runoff"                  ]    = inputDirectory + "/" + "totalRunoff_annuaTot_output"
+    #~ inputFiles["total_evaporation"             ]    = inputDirectory + "/" + "totalEvaporation_annuaTot_output"
+    #~ inputFiles["total_groundwater_recharge"    ]    = inputDirectory + "/" + "gwRecharge_annuaTot_output"
+    #~ #
+    #~ inputFiles["total_abstraction"             ]    = inputDirectory + "/" + "totalAbstraction_annuaTot_output"
+    #~ inputFiles["desalination_abstraction"      ]    = inputDirectory + "/" + "desalinationAbstraction_annuaTot_output"
+    #~ inputFiles["surface_water_abstraction"     ]    = inputDirectory + "/" + "surfaceWaterAbstraction_annuaTot_output"
+    #~ inputFiles["total_groundwater_abstraction" ]    = inputDirectory + "/" + "totalGroundwaterAbstraction_annuaTot_output_1958-12-31_to_2015-12-31.nc"
+    #~ inputFiles["fossil_groundwater_abstraction"]    = inputDirectory + "/" + "fossilGroundwaterAbstraction_annuaTot_output"
     #
     # - unit of the following is m.year and flux values given are over the entire cell area (not only irrigated areas)
     inputFiles["irrigation_water_withdrawal"   ]    = inputDirectory + "/" + "irrigationWaterWithdrawal_annuaTot_output"
