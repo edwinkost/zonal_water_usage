@@ -181,7 +181,7 @@ if __name__ == "__main__":
     # output that will be calculated 
     output = {}
     variable_names  = inputFiles.keys()
-    variable_names += ['irrigation_water_consumption']
+    #~ variable_names += ['irrigation_water_consumption']
     for var in variable_names:
         output[var] = {}
         output[var]['file_name'] = outputDirectory + "/" + str(var) + "_annual_country.nc"
@@ -311,11 +311,11 @@ if __name__ == "__main__":
                 output[var]['pcr_value'] = output[var]['pcr_value']
                                                               
 
-        # calculating irrigation water consumption
-        output['irrigation_water_consumption']['pcr_value'] = output['evaporation_from_irrigation']['pcr_value'] * \
-                                                              vos.getValDivZero(output['irrigation_water_withdrawal']['pcr_value'], \
-                                                                                output['irrigation_water_withdrawal']['pcr_value'] +\
-                                                                                output['precipitation_at_irrigation']['pcr_value'])
+        #~ # calculating irrigation water consumption
+        #~ output['irrigation_water_consumption']['pcr_value'] = output['evaporation_from_irrigation']['pcr_value'] * \
+                                                              #~ vos.getValDivZero(output['irrigation_water_withdrawal']['pcr_value'], \
+                                                                                #~ output['irrigation_water_withdrawal']['pcr_value'] +\
+                                                                                #~ output['precipitation_at_irrigation']['pcr_value'])
         
         # upscaling to the class (country) units and writing to netcdf files and a table
         for var in output.keys():
