@@ -294,6 +294,17 @@ if __name__ == "__main__":
                                                               cloneMapFileName  = cloneMapFileName,
                                                               LatitudeLongitude = True,
                                                               specificFillValue = None)
+            # - water demand files/values are still in m.day-1 ; we have to convert them to m.year-1
+            if var in ["domesticGrossDemand",  \
+                       "industryGrossDemand",  \
+                       "livestockGrossDemand", \
+                       "domesticNettoDemand",  \
+                       "industryNettoDemand",  \
+                       "livestockNettoDemand"]:
+                number_of_days_in_the_year = 365
+                if calendar.isleap(iYear): number_of_days_in_the_year = 366 
+                output[var]['pcr_value'] = output[var]['pcr_value']
+                                                              
 
         # calculating irrigation water consumption
         output['irrigation_water_consumption']['pcr_value'] = output['evaporation_from_irrigation']['pcr_value'] * \
