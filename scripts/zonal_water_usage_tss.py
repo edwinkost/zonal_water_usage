@@ -128,17 +128,30 @@ if __name__ == "__main__":
     pcr.setclone(landmask05minFile)
     
     # output directory
-    outputDirectory = "/scratch-shared/edwinhs/country_water_use_for_pcrglobwb2.0_paper/"
-
+    outputDirectory = "/scratch-shared/edwinhs/country_water_use_and_demand_for_pcrglobwb2.0_paper/"
+    
     # start year and end year
     staYear = 1958
     endYear = 2015
 
     # input files
+    #
+    # - output directory of PCR-GLOBWB 2:
     inputDirectory  = "/scratch-shared/edwinhs/runs_2017_july_aug_finalizing_4LCs/05min_runs/05min_runs_4LCs_accutraveltime_cru-forcing_1958-2015/non-natural_starting_from_1958/global/netcdf/"
+    # - water demand directory (domestic, industrial, livestock; no aggricultural)
+    waterDemandDirectory = "/scratch-shared/edwinhs/05min_runs_for_gmd_paper_30_oct_2017/05min_runs_4LCs_accutraveltime_cru-forcing_1958-2015/non-natural_starting_from_1958/analysis/water_demand/annual_average_m_per_day/" 
+    #
     inputFiles = {}
     #
     # - unit of the following is m.year and flux values given are over the entire cell area
+    #
+    inputFiles["domesticGrossDemand"   ]      = waterDemandDirectory + "/" + "domesticGrossDemand.nc"
+    inputFiles["industryGrossDemand"   ]      = waterDemandDirectory + "/" + "industryGrossDemand.nc"
+    inputFiles["livestockGrossDemand"  ]      = waterDemandDirectory + "/" + "livestockGrossDemand.nc"
+    #                                                                        
+    inputFiles["domesticNettoDemand"   ]      = waterDemandDirectory + "/" + "domesticNettoDemand.nc"
+    inputFiles["industryNettoDemand"   ]      = waterDemandDirectory + "/" + "industryNettoDemand.nc"
+    inputFiles["livestockNettoDemand"  ]      = waterDemandDirectory + "/" + "livestockNettoDemand.nc"
     #
     inputFiles["domestic_water_withdrawal"     ]    = inputDirectory + "/" + "domesticWaterWithdrawal_annuaTot_output"
     inputFiles["industry_water_withdrawal"     ]    = inputDirectory + "/" + "industryWaterWithdrawal_annuaTot_output"
@@ -264,10 +277,18 @@ if __name__ == "__main__":
             inputFile = inputFiles[var]
             if var!= "total_groundwater_abstraction":
                 inputFile = inputFile + "_" + fulldate + "_to_" + fulldate + ".nc"
-            print inputFile
+            if var in ["domesticGrossDemand",  \
+                       "industryGrossDemand",  \ 
+                       "livestockGrossDemand", \
+                       "domesticNettoDemand",  \ 
+                       "industryNettoDemand",  \ 
+                       "livestockNettoDemand"]:
+               inputFile = inputFiles[var]
+            print inputFile   
 
+            # reading PCR-GLOBWB values
             output[var]['pcr_value'] = vos.netcdf2PCRobjClone(ncFile = inputFile,\
-                                                              varName = "Automatic",\
+                                                              varName = variable_name,\
                                                               dateInput = fulldate,
                                                               useDoy = None,
                                                               cloneMapFileName  = cloneMapFileName,
