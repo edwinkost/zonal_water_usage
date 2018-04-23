@@ -137,7 +137,7 @@ if __name__ == "__main__":
     # input files
     #
     # - output directory of PCR-GLOBWB 2:
-    inputDirectory  = "/scratch-shared/edwinhs/runs_2017_july_aug_finalizing_4LCs/05min_runs/05min_runs_4LCs_accutraveltime_cru-forcing_1958-2015/non-natural_starting_from_1958/global/netcdf/"
+    inputDirectory  = "/scratch-shared/edwin/05min_runs_for_land_subsidence_deltares_march_april_2017/4LCs_accutraveltime_cru-forcing/non-natural/merged_1958_to_2015/global/netcdf/"
     # - water demand directory (domestic, industrial, livestock; no aggricultural)
     waterDemandDirectory = "/scratch-shared/edwinhs/05min_runs_for_gmd_paper_30_oct_2017/05min_runs_4LCs_accutraveltime_cru-forcing_1958-2015/non-natural_starting_from_1958/analysis/water_demand/annual_average_m_per_day/" 
     #
