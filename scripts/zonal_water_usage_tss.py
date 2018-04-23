@@ -278,10 +278,10 @@ if __name__ == "__main__":
             if var!= "total_groundwater_abstraction":
                 inputFile = inputFile + "_" + fulldate + "_to_" + fulldate + ".nc"
             if var in ["domesticGrossDemand",  \
-                       "industryGrossDemand",  \ 
+                       "industryGrossDemand",  \
                        "livestockGrossDemand", \
-                       "domesticNettoDemand",  \ 
-                       "industryNettoDemand",  \ 
+                       "domesticNettoDemand",  \
+                       "industryNettoDemand",  \
                        "livestockNettoDemand"]:
                inputFile = inputFiles[var]
             print inputFile   
