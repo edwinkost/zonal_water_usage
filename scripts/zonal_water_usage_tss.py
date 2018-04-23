@@ -288,7 +288,7 @@ if __name__ == "__main__":
 
             # reading PCR-GLOBWB values
             output[var]['pcr_value'] = vos.netcdf2PCRobjClone(ncFile = inputFile,\
-                                                              varName = variable_name,\
+                                                              varName = "Automatic",\
                                                               dateInput = fulldate,
                                                               useDoy = None,
                                                               cloneMapFileName  = cloneMapFileName,
