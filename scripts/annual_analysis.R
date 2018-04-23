@@ -4,10 +4,12 @@ require(foreign)
 
 # output folder
 output_folder = "/scratch-shared/edwinhs/country_water_use_for_pcrglobwb2.0_paper/table_summary/"
+output_folder = "/scratch-shared/edwinhs/country_water_use_and_demand_for_pcrglobwb2.0_paper/water_demand_table_summary/"
 dir.create(output_folder)
 
 # table folder
 table_folder  = "/scratch-shared/edwinhs/country_water_use_for_pcrglobwb2.0_paper/table/"
+table_folder  = "/scratch-shared/edwinhs/country_water_use_and_demand_for_pcrglobwb2.0_paper/table/"
 
 # years used
 starting_year = 1958 
