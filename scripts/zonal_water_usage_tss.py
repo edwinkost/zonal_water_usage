@@ -286,10 +286,15 @@ if __name__ == "__main__":
                inputFile = inputFiles[var]
             print inputFile   
 
+            # fixing the year for water demand years (only between 1958 and 2010)
+            fulldate_for_reading_netcdf = fulldate
+            if iYear < 1960: fulldate_for_reading_netcdf = '%4i-%02i-%02i'  %(int(1960), int(12), int(31))
+            if iYear > 2010: fulldate_for_reading_netcdf = '%4i-%02i-%02i'  %(int(2010), int(12), int(31))
+            
             # reading PCR-GLOBWB values
             output[var]['pcr_value'] = vos.netcdf2PCRobjClone(ncFile = inputFile,\
                                                               varName = "Automatic",\
-                                                              dateInput = fulldate,
+                                                              dateInput = fulldate_for_reading_netcdf,
                                                               useDoy = None,
                                                               cloneMapFileName  = cloneMapFileName,
                                                               LatitudeLongitude = True,
