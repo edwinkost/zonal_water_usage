@@ -279,18 +279,27 @@ if __name__ == "__main__":
             inputFile = inputFiles[var]
             if var!= "total_groundwater_abstraction":
                 inputFile = inputFile + "_" + fulldate + "_to_" + fulldate + ".nc"
-            print inputFile   
-
-            # fixing the year for water demand years (only between 1961 and 2014)
-            fulldate_for_reading_netcdf = fulldate
             if var in ["domesticGrossDemand",  \
                        "industryGrossDemand",  \
                        "livestockGrossDemand", \
                        "domesticNettoDemand",  \
                        "industryNettoDemand",  \
                        "livestockNettoDemand"]:
-                if iYear < 1961: fulldate_for_reading_netcdf = '%4i-%02i-%02i'  %(int(1960), int(12), int(31))
-                if iYear > 2014: fulldate_for_reading_netcdf = '%4i-%02i-%02i'  %(int(2010), int(12), int(31))
+               inputFile = inputFiles[var]
+            print inputFile   
+
+            # date used for reading netcdf file
+            fulldate_for_reading_netcdf = fulldate
+
+            # fixing the year for water demand years (only between 1961 and 2014)
+            if var in ["domesticGrossDemand",  \
+                       "industryGrossDemand",  \
+                       "livestockGrossDemand", \
+                       "domesticNettoDemand",  \
+                       "industryNettoDemand",  \
+                       "livestockNettoDemand"]:
+               if iYear < 1961: fulldate_for_reading_netcdf = '%4i-%02i-%02i'  %(int(1960), int(12), int(31))
+               if iYear > 2014: fulldate_for_reading_netcdf = '%4i-%02i-%02i'  %(int(2010), int(12), int(31))
             
             # reading netcdf files
             # - variable names will be automatically assigned
