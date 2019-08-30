@@ -153,14 +153,14 @@ if __name__ == "__main__":
     inputFiles["industryNettoDemand"   ]      = waterDemandDirectory + "/" + "industryNettoDemand_annuaAvg_m_per_day.nc"
     inputFiles["livestockNettoDemand"  ]      = waterDemandDirectory + "/" + "livestockNettoDemand_annuaAvg_m_per_day.nc"
     #
-    inputFiles["domestic_water_withdrawal"     ]    = inputDirectory + "/" + "domesticWaterWithdrawal_annuaTot_output_"
-    inputFiles["industry_water_withdrawal"     ]    = inputDirectory + "/" + "industryWaterWithdrawal_annuaTot_output_"
-    inputFiles["livestock_water_withdrawal"    ]    = inputDirectory + "/" + "livestockWaterWithdrawal_annuaTot_output_"
+    inputFiles["domestic_water_withdrawal"     ]    = inputDirectory + "/" + "domesticWaterWithdrawal_annuaTot_output"
+    inputFiles["industry_water_withdrawal"     ]    = inputDirectory + "/" + "industryWaterWithdrawal_annuaTot_output"
+    inputFiles["livestock_water_withdrawal"    ]    = inputDirectory + "/" + "livestockWaterWithdrawal_annuaTot_output"
     #
     inputFiles["non_irrigation_consumption"    ]    = inputDirectory + "/" + "nonIrrWaterConsumption_annuaTot_output"
     #
-    inputFiles["precipitation"                 ]    = inputDirectory + "/" + "precipitation_annuaTot_output_"
-    inputFiles["total_runoff"                  ]    = inputDirectory + "/" + "totalRunoff_annuaTot_output_"
+    inputFiles["precipitation"                 ]    = inputDirectory + "/" + "precipitation_annuaTot_output"
+    inputFiles["total_runoff"                  ]    = inputDirectory + "/" + "totalRunoff_annuaTot_output"
     #
     inputFiles["total_evaporation"             ]    = inputDirectory + "/" + "totalEvaporation_annuaTot_output"
     #
@@ -170,7 +170,7 @@ if __name__ == "__main__":
     inputFiles["desalination_abstraction"      ]    = inputDirectory + "/" + "desalinationAbstraction_annuaTot_output"
     inputFiles["surface_water_abstraction"     ]    = inputDirectory + "/" + "surfaceWaterAbstraction_annuaTot_output"
     #
-    inputFiles["total_groundwater_abstraction" ]    = inputDirectory + "/" + "totalGroundwaterAbstraction_annuaTot_output_"
+    inputFiles["total_groundwater_abstraction" ]    = inputDirectory + "/" + "totalGroundwaterAbstraction_annuaTot_output"
     inputFiles["fossil_groundwater_abstraction"]    = inputDirectory + "/" + "fossilGroundwaterAbstraction_annuaTot_output"
     #
     # - unit of the following is m.year and flux values given are over the entire cell area (not only irrigated areas)
@@ -276,7 +276,7 @@ if __name__ == "__main__":
         for var in inputFiles.keys():        
             
             # netcdf input file name:
-            inputFile = inputFiles[var]
+            inputFile = inputFile + "_" + fulldate + "_to_" + fulldate + ".nc"
             if var in ["domesticGrossDemand",  \
                        "industryGrossDemand",  \
                        "livestockGrossDemand", \
