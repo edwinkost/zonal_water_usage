@@ -153,7 +153,7 @@ if __name__ == "__main__":
     inputFiles["industryNettoDemand"   ]      = waterDemandDirectory + "/" + "industryNettoDemand_annuaAvg_m_per_day.nc"
     inputFiles["livestockNettoDemand"  ]      = waterDemandDirectory + "/" + "livestockNettoDemand_annuaAvg_m_per_day.nc"
     #
-    inputFiles["domestic_water_withdrawal"     ]    = inputDirectory + "/" + "domesticWaterWithdrawal_annuaTot_output_
+    inputFiles["domestic_water_withdrawal"     ]    = inputDirectory + "/" + "domesticWaterWithdrawal_annuaTot_output_"
     inputFiles["industry_water_withdrawal"     ]    = inputDirectory + "/" + "industryWaterWithdrawal_annuaTot_output_"
     inputFiles["livestock_water_withdrawal"    ]    = inputDirectory + "/" + "livestockWaterWithdrawal_annuaTot_output_"
     #
