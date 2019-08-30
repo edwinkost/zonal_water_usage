@@ -184,7 +184,7 @@ if __name__ == "__main__":
     # output that will be calculated 
     output = {}
     variable_names  = inputFiles.keys()
-    #~ variable_names += ['irrigation_water_consumption']
+    variable_names += ['irrigation_water_consumption']
     for var in variable_names:
         output[var] = {}
         output[var]['file_name'] = outputDirectory + "/" + str(var) + "_annual_country.nc"
