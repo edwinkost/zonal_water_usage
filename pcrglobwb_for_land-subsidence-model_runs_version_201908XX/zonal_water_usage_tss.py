@@ -277,8 +277,6 @@ if __name__ == "__main__":
             
             # netcdf input file name:
             inputFile = inputFiles[var]
-            if var!= "total_groundwater_abstraction":
-                inputFile = inputFile + "_" + fulldate + "_to_" + fulldate + ".nc"
             if var in ["domesticGrossDemand",  \
                        "industryGrossDemand",  \
                        "livestockGrossDemand", \
