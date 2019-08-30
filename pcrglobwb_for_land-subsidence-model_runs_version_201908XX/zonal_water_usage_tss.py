@@ -276,6 +276,7 @@ if __name__ == "__main__":
         for var in inputFiles.keys():        
             
             # netcdf input file name:
+            inputFile = inputFiles[var]
             inputFile = inputFile + "_" + fulldate + "_to_" + fulldate + ".nc"
             if var in ["domesticGrossDemand",  \
                        "industryGrossDemand",  \
