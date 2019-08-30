@@ -350,8 +350,8 @@ if __name__ == "__main__":
             pcrValue =  pcrValue * cellArea
 
             # calculate global values
-            global_value = vos.getMapTotal
-            print("\n\n Global " + str(var) + " " + str(iYear) + ": " + str(global_value/(1000. * 1000. * 1000.)) + "\n\n")
+            global_value = vos.getMapTotal(pcrValue) / (1000. * 1000. * 1000.)
+            print("\n\n Global " + str(var) + " " + str(iYear) + ": " + str(global_value) + "\n\n")
             
             # upscaling to the class (country) units and converting the units to km3/year
             pcrValue = pcr.areatotal(pcrValue, uniqueIDs) / (1000. * 1000. * 1000.)
