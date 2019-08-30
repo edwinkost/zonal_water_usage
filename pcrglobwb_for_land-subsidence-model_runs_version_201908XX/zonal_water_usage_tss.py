@@ -298,8 +298,8 @@ if __name__ == "__main__":
                        "domesticNettoDemand",  \
                        "industryNettoDemand",  \
                        "livestockNettoDemand"]:
-               if iYear < 1961: fulldate_for_reading_netcdf = '%4i-%02i-%02i'  %(int(1960), int(12), int(31))
-               if iYear > 2014: fulldate_for_reading_netcdf = '%4i-%02i-%02i'  %(int(2010), int(12), int(31))
+               if iYear < 1961: fulldate_for_reading_netcdf = '%4i-%02i-%02i'  %(int(1961), int(12), int(31))
+               if iYear > 2014: fulldate_for_reading_netcdf = '%4i-%02i-%02i'  %(int(2014), int(12), int(31))
             
             # reading netcdf files
             # - variable names will be automatically assigned
